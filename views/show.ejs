@@ -1,0 +1,24 @@
+<%- include('./partials/header.ejs') %>
+
+  <body>
+    <h1>Item Show Page</h1>
+
+    <h2>This is the show page for <%= items.item %></h2>
+
+   <p>Name: <%= items.item %> </p>
+   <p>Category <%= items.category %> </p>
+   <p>Unit Size <%= items.unit_size %> </p>
+   <p>In Stock Qty <%= items.in_stock_qty %> </p>
+   <p>Need to Purchase <%= items.must_order %> </p>
+   <p>Qty to purchase <%= items.order_qty %> </p>
+
+   <form method="POST" action="/inventory/<%= items.id %>/buy/?_method=PUT">
+   <button>BUY</button>
+  </form>
+
+
+
+    <a href="/inventory">Back to Inventory Index</a>
+    
+  </body>
+</html>

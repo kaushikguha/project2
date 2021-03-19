@@ -1,0 +1,26 @@
+<%- include('./partials/header.ejs') %>
+
+  <body>
+    <h1>Edit Product <%= items.name %> </h1>
+    <form method="POST" action="/inventory/<%= items.id %>?_method=PUT">
+      <!-- NOTE: the form is pre-populated with values from the server  -->
+      <label for="item">Name:</label>
+      <input type="text" name="item" value="<%=items.item%>"/>
+      <label for="category">Category:</label>
+      <input type="text" name="category" value="<%=items.category%>"/>
+      <label for="unit_size">Unit Size:</label>
+      <input type="text" name="unit_size" value="<%=items.unit_size%>"/>
+      <label for="in_stock_qty">In Stock Qty:</label>
+      <input type="number" name="in_stock_qty" value="<%=items.in_stock_qty%>"/>
+      <label for="price">Cost:</label>
+      <input type="number" name="cost" value="<%=items.price%>"/>
+      <label for="must_order">Place an Order:</label>
+      <input type="boolean" name="must_order" value="<%=items.must_order%>"/>
+      <label for="must_order">Amount to Order:</label>
+      <input type="number" name="order_qty" value="<%=items.order_qty%>"/>    
+      />
+      <input type="submit" name="" value="Submit Changes"/>
+    </form>
+
+  </body>
+</html>
