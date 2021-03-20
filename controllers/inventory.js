@@ -11,14 +11,16 @@ router.get('/', (req,res)=>{
 		if (err){
 			console.log(err)
 		}else {
-			res.render('index.ejs',{items: foundInventory})
+			res.render('index.ejs',{items: foundInventory,
+			currentUser: req.session.currentUser
+		})
 		}	
 	})
 })
 
 //New
 router.get('/new',(req,res)=>{
-	res.render('new.ejs')
+	res.render('new.ejs', {currentUser: req.session.currentUser})
 })
 
 //seeding
@@ -57,7 +59,7 @@ router.get('/seed', (req,res)=>{
 //Show route
 router.get('/:id', (req,res)=>{
 	Inventory.findById(req.params.id, (err, foundInventory)=>{
-		res.render('show.ejs', {items: foundInventory})
+		res.render('show.ejs', {items: foundInventory, currentUser: req.session.currentUser})
 	})
 })
 
@@ -93,7 +95,9 @@ router.get ('/:id/edit', (req, res)=>{
 	Inventory.findById(req.params.id, (err,foundInventory)=>{
 		console.log(foundInventory)
 		res.render('edit.ejs', {
-			items: foundInventory
+			items: foundInventory,
+			currentUser: req.session.currentUser
+
 		})
 	})
 })	

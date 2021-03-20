@@ -1,4 +1,5 @@
 <%- include('./partials/header.ejs') %>
+<%- include('./partials/nav.ejs') %>
 
   <body>
     <h1>Edit Product <%= items.name %> </h1>
@@ -13,12 +14,8 @@
       <label for="in_stock_qty">In Stock Qty:</label>
       <input type="number" name="in_stock_qty" value="<%=items.in_stock_qty%>"/>
       <label for="price">Cost:</label>
-      <input type="number" name="cost" value="<%=items.price%>"/>
-      <label for="must_order">Place an Order:</label>
-      <input type="boolean" name="must_order" value="<%=items.must_order%>"/>
-      <label for="must_order">Amount to Order:</label>
-      <input type="number" name="order_qty" value="<%=items.order_qty%>"/>    
-      />
+      <input type="number" name="cost" value="<%=items.price%>"/>    
+      
       <input type="submit" name="" value="Submit Changes"/>
     </form>
 

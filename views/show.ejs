@@ -1,4 +1,5 @@
 <%- include('./partials/header.ejs') %>
+<%- include('./partials/nav.ejs') %>
 
   <body>
     <h1>Item Show Page</h1>
@@ -9,10 +10,13 @@
    <p>Category <%= items.category %> </p>
    <p>Unit Size <%= items.unit_size %> </p>
    <p>In Stock Qty <%= items.in_stock_qty %> </p>
-   <p>Need to Purchase <%= items.must_order %> </p>
-   <p>Qty to purchase <%= items.order_qty %> </p>
+   <p>Unit Price <%= items.price %> </p>
+   
+   <label for="price">Qty to Purchase:</label>
+   <input type="number" name="cost">
 
-   <form method="POST" action="/inventory/<%= items.id %>/buy/?_method=PUT">
+
+   <form method="POST" action="/order/<%= items.id %>/buy/?_method=POST">
    <button>BUY</button>
   </form>
 

@@ -7,8 +7,7 @@ const inventorySchema=new Schema({
 	unit_size: String,
 	in_stock_qty: {type: Number, min: 0},
 	price: Number,
-	must_order: {type: Boolean, default: false},
-	order_qty:{type: Number, min:0, default: 0}
+
 
 })
 

@@ -1,0 +1,29 @@
+<nav>
+    <div>
+        
+        <span>
+            <a href="/" class="">HOME</a> | 
+            <a href="/inventory" class=""> All Items</a>
+            
+        </span>
+                    
+        <ul class="right">          
+            
+            <% if (currentUser) { %>
+                <li><a href="/inventory/new">Create a new Item</a> </li>
+                <li style="padding-right:15px;">Welcome <%= currentUser.username %></li>
+                
+                <li>
+                    <form action="/sessions?_method=DELETE" method="POST">
+                        <button>Log out</button>
+                    </form>
+                </li>
+            <% } else { %>
+                <li><a href="/sessions/new">Log In</a></li>
+                <li><a href="/users/new">Sign Up</a></li>
+            <% } %>          
+                    
+        </ul>
+    </div>
+    
+</nav>

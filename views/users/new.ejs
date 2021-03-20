@@ -1,0 +1,25 @@
+<%- include('../partials/header.ejs') %>
+
+
+    <main>
+
+        <h4>New User Page</h4>
+
+        <form action="/users" method="POST">
+
+            <label>
+                <span>username:</span>
+                <input type="text" name="username" />
+            </label>
+
+            <label>
+                <span>password:</span>
+                <input type="password" name="password" />
+            </label>
+            <br>
+            <br>
+            <input type="submit" value="Create User" />
+        </form>
+
+    </main>
+
