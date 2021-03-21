@@ -8,11 +8,11 @@
         <li>
           <p> Item: <%= items[i].item %> </p> 
           <p> Order Quantity: <%= items[i].order_qty %> </p>
-          <p> Total: </p>
+          <p> Total: <%= items[i].total %></p>
           <p> Placed by: <%= items[i].orderPlacedBy %> </p>
 
           
-          <form method="POST" action="/inventory/<%= items[i].id %>?_method=DELETE">
+          <form method="POST" action="/orders/<%= items[i].id %>?_method=DELETE">
             <button>Delete</button>
           </form>
         </li>

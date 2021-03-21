@@ -12,13 +12,22 @@
    <p>In Stock Qty <%= items.in_stock_qty %> </p>
    <p>Unit Price <%= items.price %> </p>
    
-   <label for="price">Qty to Purchase:</label>
-   <input type="number" name="cost">
 
 
-   <form method="POST" action="/order/<%= items.id %>/buy/?_method=POST">
+
+<form method="POST" action="/orders/<%= items.id %>">
+   <label for="quantity">Qty to Purchase:</label>
+   <input type="number" name="order_qty">
+   
+   <input type="hidden" name="item" value="<%=items.item%>"/>
+   
+   <input type="hidden" name="price" value="<%=items.price%>"/>
+
+   <input type="Date" name="date" value="<%=new Date().toISOString().substring(0, 10)%>"/>
+  
+   <input type="hidden" name="orderPlacedBy" value="<%=currentUser.username%>"/>
    <button>BUY</button>
-  </form>
+</form>
 
 
 
