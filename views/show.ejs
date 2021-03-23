@@ -23,7 +23,7 @@
    
    <input type="hidden" name="price" value="<%=items.price%>"/>
 
-   <input type="Date" name="date" value="<%=new Date().toISOString().substring(0, 10)%>"/>
+   <input type="hidden" name="date" value="<%=new Date().toISOString().substring(0, 10)%>"/>
   
    <input type="hidden" name="orderPlacedBy" value="<%=currentUser.username%>"/>
    <button>BUY</button>

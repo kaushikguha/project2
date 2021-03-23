@@ -1,23 +1,35 @@
 // <%- include('./partials/header.ejs') %>
 <%- include('./partials/nav.ejs') %>
 
-  <body>
-    <h1>Inventory Order Page</h1>
-    <ul>
-      <% for(let i = 0; i < items.length; i++ ) { %>
-        <li>
-          <p> Item: <%= items[i].item %> </p> 
-          <p> Order Quantity: <%= items[i].order_qty %> </p>
-          <p> Total: <%= items[i].total %></p>
-          <p> Placed by: <%= items[i].orderPlacedBy %> </p>
+  <h1>Inventory Order Page</h1>
+  <table>
 
-          
+    <tr>
+      <th>Item</th>
+      <th>Order Quantity</th>
+      <th>Total</th>
+      <th>Placed by</th>
+      <th>Date</th>
+      
+    </tr>
+    
+    
+      <% for(let i = 0; i < items.length; i++ ) { %>
+        <tr>
+          <td> <%= items[i].item %> </td> 
+          <td> <%= items[i].order_qty %> </td>
+          <td> <%= items[i].total %></td>
+          <td> <%= items[i].orderPlacedBy %> </td>
+          <td> <%= items[i].date %> </td>
+
+          <td>
           <form method="POST" action="/orders/<%= items[i].id %>?_method=DELETE">
             <button>Delete</button>
           </form>
-        </li>
+          </td>
+        </tr>
       <% } %>
-    </ul>
+    
 
     <a href="/inventory">Back to Inventory Index</a>
   </body>

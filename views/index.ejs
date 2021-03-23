@@ -1,24 +1,38 @@
 <%- include('./partials/header.ejs') %>
 <%- include('./partials/nav.ejs') %>
 
-  <body>
-    <h1>Inventory Index Page</h1>
-    <ul>
-      <% for(let i = 0; i < items.length; i++ ) { %>
-        <li>
-          <a href="/inventory/<%=items[i].id%>"> <%= items[i].item %></a>
-          <p> Category: <%= items[i].category %> </p>
-          <p> Quantity in Stock: <%= items[i].in_stock_qty %> </p>
-          <p> Cost to Purchase: <%= items[i].price %> </p>
+  <h1>Inventory Index Page</h1>
+  <table>
+    
+    <tr>
+      <th>Item</th>
+      <th>Category</th>
+      <th>Quantity in Stock</th>
+      <th>Cost to Purchase</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
 
-          <p><a href="/inventory/<%=items[i].id%>/edit">Edit</a></p>
+
+    
+      <% for(let i = 0; i < items.length; i++ ) { %>
+        <tr>
+          <td href="/inventory/<%=items[i].id%>"> <%= items[i].item %></td>
+          <td> <%= items[i].category %> </td>
+          <td> <%= items[i].in_stock_qty %> </td>
+          <td> <%= items[i].price %> </td>
+
+          <td><a href="/inventory/<%=items[i].id%>/edit">Edit</a></td>
+
+          <td>
 
           <form method="POST" action="/inventory/<%= items[i].id %>?_method=DELETE">
             <button>Delete</button>
           </form>
-        </li>
+          </td>
+       </tr> 
       <% } %>
-    </ul>
+    
 
     <a href="inventory/new">Create a New Item</a>
   </body>
