@@ -5,6 +5,36 @@ body {
   min-height: 100vh;
 }
 
+table{
+  font-family: papyrus;
+}
+
+.index {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-family: copperplate;
+  text-align: center;
+
+}
+
+
+
+
+
+.container-fluid{
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  background-color: #49F477;
+  font-family: impact;
+
+}
+
+.col-2{
+  flex-grow: 1;
+  
+}
+
 nav{
   padding: 0 5px;
 }

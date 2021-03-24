@@ -105,7 +105,9 @@ router.get ('/:id/edit', (req, res)=>{
 //Update Route
 router.put('/:id', (req,res)=>{
 	Inventory.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedItem)=>{
+		console.log(updatedItem)
 		res.redirect('/inventory')
+
 	})
 })
 
