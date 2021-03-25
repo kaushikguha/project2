@@ -66,7 +66,15 @@ const sessionsController=require('./controllers/sessions.js')
 app.use('/sessions', sessionsController)
 
 const ordersControllers = require('./controllers/orders')
-app.use('/orders', ordersControllers);
+app.use('/orders', isAuthenticated, ordersControllers);
+
+// HOMEPAGE Route
+app.get('/', (req, res) => {
+    res.render('home.ejs', {
+        currentUser: req.session.currentUser
+    })
+})
+
 
 
 app.listen(PORT, ()=>{
