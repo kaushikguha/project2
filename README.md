@@ -25,4 +25,8 @@ The routes included are:
 
 There are other GET routes and POST routes for the sessions as well as order capturing.
 
+## Wire Frames
+
+<img src="public/css/assets/wireframes.jpg" width="200"> 
+
 
