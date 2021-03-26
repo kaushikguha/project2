@@ -32,6 +32,11 @@ table{
 
 }
 
+.main_top{
+  text-align: center;
+}
+
+
 .main_home, .login_page{
 
   width: 900px;
