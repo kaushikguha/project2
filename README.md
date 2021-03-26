@@ -27,6 +27,6 @@ There are other GET routes and POST routes for the sessions as well as order cap
 
 ## Wire Frames
 
-<img src="public/css/assets/wireframes.png" width="200"> 
+<img src="public/css/assets/wireframes.png" width="400"> 
 
 
