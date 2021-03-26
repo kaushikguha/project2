@@ -2,7 +2,7 @@
 
 # Project II for Kaushik Guha: Inventory Management App
 
-<img src="css/assets/inv.jpg" width="200"> 
+<img src="public/css/assets/inv.jpg" width="200"> 
 
 ## User Story
 
